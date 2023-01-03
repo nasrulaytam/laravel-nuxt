@@ -18,15 +18,15 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('gender')->nullable();
-            $table->string('age')->nullable();
-            $table->string('phone')->nullable();
+            $table->integer('age')->nullable();
+            $table->integer('phone')->nullable();
             $table->string('photo')->nullable();
 
-            $table->string('team_id')->unsigned();
-            $table->string('role_id')->unsigned();
+            $table->integer('team_id')->unsigned();
+            $table->integer('role_id')->unsigned();
 
             $table->boolean('is_verified')->default(false);
-            $table->string('verified_at')->nullable();
+            $table->timestamp('verified_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
